@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Gastos Mensuales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registro de Gastos Mensuales</h1>
+
+        <!-- Sección para ingresar el sueldo y el mes -->
+        <div id="seccionSueldo" class="input-group">
+            <label for="sueldo">Sueldo mensual:</label>
+            <input type="text" id="sueldo" placeholder="Ingresa tu sueldo" required>
+        </div>
+
+        <div id="seccionMes" class="input-group">
+            <label for="mes">Mes:</label>
+            <input type="text" id="mes" placeholder="Ingresa el mes" required>
+        </div>
+
+        <button id="guardarSueldo">Guardar Sueldo</button>
+
+        <!-- Sección para ingresar los gastos -->
+        <div id="seccionGastos" class="hidden">
+            <h2>Registro de Gastos Mensuales</h2>
+
+            <div class="input-group">
+                <label for="nombreGasto">Nombre del gasto:</label>
+                <input type="text" id="nombreGasto" placeholder="Ej: Renta">
+            </div>
+
+            <div class="input-group">
+                <label for="montoGasto">Monto del gasto:</label>
+                <input type="text" id="montoGasto" placeholder="Ej: 500.000">
+            </div>
+
+            <div class="input-group">
+                <label for="prioridadGasto">Prioridad:</label>
+                <select id="prioridadGasto">
+                    <option value="Esencial">Esencial</option>
+                    <option value="Lo Quiero">Lo Quiero</option>
+                    <option value="Innecesario">Innecesario</option>
+                </select>
+            </div>
+
+            <button id="agregarGasto">Agregar Gasto</button>
+
+            <h2>Gastos por Prioridad</h2>
+            <div id="gastosEsenciales" class="priority-group">
+                <h3>Esenciales</h3>
+                <ul id="listaEsenciales"></ul>
+                <p>Total: $<span id="totalEsenciales">0</span></p>
+            </div>
+            <div id="gastosLoQuiero" class="priority-group">
+                <h3>Lo Quiero</h3>
+                <ul id="listaLoQuiero"></ul>
+                <p>Total: $<span id="totalLoQuiero">0</span></p>
+            </div>
+            <div id="gastosInnecesarios" class="priority-group">
+                <h3>Innecesarios</h3>
+                <ul id="listaInnecesarios"></ul>
+                <p>Total: $<span id="totalInnecesarios">0</span></p>
+            </div>
+
+            <button id="pagar">Pagar</button>
+
+            <div id="balance" class="hidden">
+                <h2>Balance Final</h2>
+                <p>Sueldo: $<span id="sueldoTotal"></span></p>
+                <p>Total Gastos a Pagar: $<span id="gastoTotal"></span></p>
+                <p>Saldo Restante: $<span id="saldoRestante"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
